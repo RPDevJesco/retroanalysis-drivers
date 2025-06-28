@@ -1,8 +1,8 @@
 package drivers
 
 import (
-	"github.com/RPDevJesco/retroanalysis-drivers/memory"
 	"fmt"
+	"github.com/RPDevJesco/retroanalysis-drivers/memory"
 	"net"
 	"strconv"
 	"strings"
@@ -157,7 +157,7 @@ func (d *AdaptiveRetroArchDriver) testConnection() error {
 }
 
 // ReadMemoryBlocks reads multiple memory blocks from RetroArch
-func (d *AdaptiveRetroArchDriver) ReadMemoryBlocks(blocks []types.MemoryBlock) (map[uint32][]byte, error) {
+func (d *AdaptiveRetroArchDriver) ReadMemoryBlocks(blocks []memory.Block) (map[uint32][]byte, error) {
 	if d.conn == nil {
 		if err := d.Connect(); err != nil {
 			return nil, err

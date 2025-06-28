@@ -1,7 +1,7 @@
 package drivers
 
 import (
-	"go/types"
+	"github.com/RPDevJesco/retroanalysis-drivers/memory"
 )
 
 // Driver interface for emulator communication
@@ -10,7 +10,7 @@ type Driver interface {
 	Connect() error
 
 	// ReadMemoryBlocks reads multiple memory blocks
-	ReadMemoryBlocks(blocks []types.MemoryBlock) (map[uint32][]byte, error)
+	ReadMemoryBlocks(blocks []memory.Block)
 
 	// WriteBytes writes data to a specific memory address
 	WriteBytes(address uint32, data []byte) error
